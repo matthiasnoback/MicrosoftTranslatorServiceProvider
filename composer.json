@@ -1,0 +1,23 @@
+{
+    "name": "matthiasnoback/microsoft-translator-service-provider",
+    "type": "symfony-bundle",
+    "description": "Silex service provider for using the Microsoft Translator V2 API",
+    "keywords": ["translate","Microsoft Translator", "Bing"],
+    "homepage": "http://github.com/matthiasnoback/MicrosoftTranslatorServiceProvider",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthias Noback",
+            "email": "matthiasnoback@gmail.com",
+            "homepage": "http://php-and-symfony.matthiasnoback.nl"
+        }
+    ],
+    "require": {
+        "matthiasnoback/microsoft-translator": "dev-master",
+        "silex/silex": "1.0.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0" : { "MatthiasNoback" : "src/" }
+    }
+}

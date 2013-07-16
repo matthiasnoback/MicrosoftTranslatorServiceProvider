@@ -6,7 +6,7 @@ use Silex\Application;
 use Silex\ServiceProviderInterface;
 use MatthiasNoback\MicrosoftTranslator\MicrosoftTranslator;
 use Buzz\Browser;
-use Buzz\Client\FileGetContents;
+use Buzz\Client\Curl;
 use MatthiasNoback\MicrosoftOAuth\AccessTokenProvider;
 use MatthiasNoback\Buzz\Client\CachedClient;
 use Doctrine\Common\Cache\ArrayCache;
@@ -24,7 +24,7 @@ class MicrosoftTranslatorServiceProvider implements ServiceProviderInterface
     private function registerMicrosoftOAuth(Application $app)
     {
         $app['microsoft_oauth.access_token_provider.browser.client'] = $app->share(function() {
-            return new FileGetContents();
+            return new Curl();
         });
 
         $app['microsoft_oauth.access_token_cache.cache'] = $app->share(function(Application $app) {
@@ -63,7 +63,7 @@ class MicrosoftTranslatorServiceProvider implements ServiceProviderInterface
     private function registerMicrosoftTranslator(Application $app)
     {
         $app['microsoft_translator.browser.real_client'] = $app->share(function() {
-            return new FileGetContents();
+            return new Curl();
         });
 
         $app['microsoft_translator.browser.client.cache'] = $app->share(function(Application $app) {

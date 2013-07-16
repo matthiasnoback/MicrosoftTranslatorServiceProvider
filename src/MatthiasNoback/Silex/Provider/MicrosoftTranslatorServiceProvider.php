@@ -10,7 +10,6 @@ use Buzz\Client\Curl;
 use MatthiasNoback\MicrosoftOAuth\AccessTokenProvider;
 use MatthiasNoback\Buzz\Client\CachedClient;
 use Doctrine\Common\Cache\ArrayCache;
-use Buzz\Client\ClientInterface;
 use MatthiasNoback\MicrosoftOAuth\AccessTokenCache;
 
 class MicrosoftTranslatorServiceProvider implements ServiceProviderInterface
